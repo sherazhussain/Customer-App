@@ -1,0 +1,10 @@
+.addButton {    
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.container {
+    border: 1.5px solid rgb(211, 206, 206);
+}

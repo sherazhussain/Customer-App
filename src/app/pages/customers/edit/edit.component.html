@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <h2 class="text-center">{{ header }}</h2>
+
+    <form (ngSubmit)="onSubmit(f)" #f=ngForm>
+
+        <div class="form-group mb-3">
+            <label for="">CustomerId</label>
+            <input type="number" class="form-control" [ngModel]="customer.CustomerId" name="CustomerId">
+        </div>
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control" [ngModel]="customer.Name" name="Name">
+        </div>
+        <div class="form-group">
+            <label for="">Age</label>
+            <input type="number" class="form-control" [ngModel]="customer.Age" name="Age">
+        </div>
+        <div class="form-group">
+            <label for="">Gender</label>
+            <input type="text" class="form-control" [ngModel]="customer.Gender" name="Gender">
+        </div>
+        <div class="form-group">
+            <label for="">Street No</label>
+            <input type="text" class="form-control" [ngModel]="customer.Street" name="Street">
+        </div>
+        <div class="form-group">
+            <label for="">Postal Code</label>
+            <input type="text" class="form-control" [ngModel]="customer.Postcode" name="Postcode">
+        </div>
+        <div class="form-group">
+            <label for="">House Number</label>
+            <input type="number" class="form-control" [ngModel]="customer.HouseNumber" name="HouseNumber">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary mt-3">Save</button>
+        </div>
+    </form>
+</div>

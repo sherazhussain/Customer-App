@@ -1,0 +1,76 @@
+<div class="container my-5">
+    <h2 class="text-center my-3">List of Customers</h2>
+    <a (click)="routeAdd(0)" class="btn btn-success addButton">Add Customer</a>
+    <div class="input-group my-3">
+      <input 
+        type="search" class="form-control border border-success" 
+        placeholder="Enter Name to Search" 
+        aria-label="Recipient's username" 
+        aria-describedby="button-addon2"
+        (search)="onSearch($event)"
+        >
+        
+        
+        <table 
+          class="table mt-5 bg-success p-2 text-dark bg-opacity-25" 
+          *ngFor="let SearchItems of SearchResult"
+          >
+          <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Street</th>
+            <th>PostCode</th>
+            <th>H.NO</th>
+            <th></th>
+          </thead>
+      
+          <tbody>
+            <tr>
+                    
+                <td>{{ SearchItems.CustomerId }}</td>
+                <td>{{ SearchItems.Name }}</td>
+                <td>{{ SearchItems.Age }}</td>
+                <td>{{ SearchItems.Gender }}</td>
+                <td>{{ SearchItems.Street }}</td>
+                <td>{{ SearchItems.Postcode }}</td>
+                <td>{{ SearchItems.HouseNumber }}</td>   
+            </tr>
+          </tbody>
+          </table>
+    </div>
+    <table class="table mt-5">
+      <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Street</th>
+        <th>PostCode</th>
+        <th>H.NO</th>
+        <th></th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let items of customerss;"> 
+            <td>{{ items.CustomerId }}</td>
+            <td>{{ items.Name }}</td>
+            <td>{{ items.Age }}</td>
+            <td>{{ items.Gender }}</td>
+            <td>{{ items.Street }}</td>
+            <td>{{ items.Postcode }}</td>
+            <td>{{ items.HouseNumber }}</td>
+            <td><a (click)="routeEdit(items)" class="btn btn-primary">Edit</a></td>
+            <td><button (click)="onDelete(items.CustomerId)" class="btn btn-danger">Delete</button></td>
+                  
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="this.customerss.length === 0" class="text-center">
+      <h1>Nothing to Show</h1>
+    </div>
+
+</div>
+  
